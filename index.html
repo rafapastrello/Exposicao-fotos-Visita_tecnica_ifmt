@@ -29,7 +29,9 @@
 
     <div class="center-text">
         <h1>Exposição de fotos da visita técnica</h1>
-        <p>Esta exposição reúne uma coleção única de imagens que exploram e mostra cada objeto que vimos em nossa visita técnica. Cada fotografia apresentada é uma janela para uma narrativa visual, Convidamos todos a explorar esta seleção curada de obras e a se inspirar na profundidade e na beleza de cada imagem.</p>
+        <p>Esta exposição reúne uma coleção única de imagens que exploram e mostra cada objeto que vimos em nossa visita
+            técnica. Cada fotografia apresentada é uma janela para uma narrativa visual, Convidamos todos a explorar
+            esta seleção curada de obras e a se inspirar na profundidade e na beleza de cada imagem.</p>
     </div>
 
     <div class="profile-section">
@@ -44,7 +46,9 @@
                     </audio>
                 </p>
                 <p>Participante 1: Apreciando a paisagem durante a visita técnica.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi officia sunt molestiae perferendis, soluta harum distinctio exercitationem explicabo recusandae ab a maxime est qui eveniet, fuga aliquid doloremque molestias nulla!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi officia sunt molestiae perferendis,
+                    soluta harum distinctio exercitationem explicabo recusandae ab a maxime est qui eveniet, fuga
+                    aliquid doloremque molestias nulla!</p>
             </div>
 
             <div class="profile">
@@ -56,7 +60,9 @@
                     </audio>
                 </p>
                 <p>Participante 2: Explorando novas tecnologias no laboratório.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ipsum vel exercitationem dolorem molestias alias nostrum laboriosam nihil odio? Aperiam quam dicta autem adipisci. Nostrum nemo illo ducimus iste adipisci.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ipsum vel exercitationem dolorem
+                    molestias alias nostrum laboriosam nihil odio? Aperiam quam dicta autem adipisci. Nostrum nemo illo
+                    ducimus iste adipisci.</p>
             </div>
 
             <div class="profile">
@@ -68,17 +74,22 @@
                     </audio>
                 </p>
                 <p>Participante 3: Momentos de aprendizado e descoberta.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, tenetur accusamus. Accusamus omnis recusandae deleniti! Labore id recusandae alias. Quod debitis iusto non! Laboriosam fugiat illo in error iste aspernatur.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, tenetur accusamus. Accusamus omnis
+                    recusandae deleniti! Labore id recusandae alias. Quod debitis iusto non! Laboriosam fugiat illo in
+                    error iste aspernatur.</p>
             </div>
         </div>
     </div>
 
     <div class="gallery">
         <h2>Nossa galeria</h2>
+        <p>Clique na imagem para descrição</p>
 
         <div class="gallery-row">
             <div class="gallery-item">
-                <img src="src/img/fotos/foto.jpg" alt="Foto 1">
+                <img src="src/img/fotos/foto.jpg" alt="Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, tenetur accusamus. Accusamus omnis
+                recusandae deleniti! Labore id recusandae alias. Quod debitis iusto non! Laboriosam fugiat illo in
+                error iste aspernatur.">
             </div>
             <div class="gallery-item">
                 <img src="src/img/fotos/foto.jpg" alt="Foto 2">
@@ -104,6 +115,50 @@
                 <img src="src/img/fotos/foto.jpg" alt="Foto 8">
             </div>
         </div>
+
+        <!-- Modal -->
+        <div id="myModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="imgModal">
+            <div id="caption"></div>
+        </div>
+
+        <script>
+            // Obtém o modal
+            var modal = document.getElementById("myModal");
+
+            // Obtém a imagem e o texto de descrição do modal
+            var modalImg = document.getElementById("imgModal");
+            var captionText = document.getElementById("caption");
+
+            // Seleciona todas as imagens da galeria
+            var galleryItems = document.getElementsByClassName("gallery-item");
+
+            // Percorre todas as imagens da galeria e adiciona um evento de clique
+            for (var i = 0; i < galleryItems.length; i++) {
+                var img = galleryItems[i].getElementsByTagName("img")[0];
+                img.onclick = function () {
+                    modal.style.display = "block";
+                    modalImg.src = this.src;
+                    captionText.innerHTML = this.alt;
+                }
+            }
+
+            // Obtém o elemento de fechar do modal e adiciona um evento de clique para fechar o modal
+            var span = document.getElementsByClassName("close")[0];
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+
+            // Fecha o modal se o usuário clicar fora da imagem
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+
+        </script>
     </div>
 </body>
+
 </html>
