@@ -1,0 +1,116 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #22003f;
+    color: white;
+    overflow-x: hidden;
+}
+
+.lights {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.light {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    box-shadow: 0 0 120px 120px rgba(255, 255, 255, 0.5),
+        0 0 180px 180px rgba(255, 255, 255, 0.4),
+        0 0 240px 240px rgba(255, 255, 255, 0.3);
+    animation: twinkle 5s infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 0.4;
+    }
+}
+
+.light:nth-child(1) {
+    top: 20%;
+    left: 30%;
+    animation-duration: 3s;
+}
+
+.light:nth-child(2) {
+    top: 40%;
+    left: 60%;
+    animation-duration: 4s;
+}
+
+.light:nth-child(3) {
+    top: 70%;
+    left: 50%;
+    animation-duration: 5s;
+}
+
+.light:nth-child(4) {
+    top: 80%;
+    left: 20%;
+    animation-duration: 6s;
+}
+
+.light:nth-child(5) {
+    top: 25%;
+    left: 85%;
+    animation-duration: 5.5s;
+}
+
+.center-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    z-index: 10;
+    position: relative;
+}
+
+h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+.profile-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 2rem 0;
+    background-color: #22003f;
+    position: relative;
+}
+
+.profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 1rem;
+}
+
+.profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid white;
+    object-fit: cover;
+}
