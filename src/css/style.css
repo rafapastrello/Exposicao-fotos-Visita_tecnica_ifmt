@@ -253,8 +253,8 @@ p {
     }
 
     .gallery-item {
-        flex-basis: 100%; /* 1 item per row */
-        max-width: 100%;
+        flex-basis: calc(50% - 1rem); /* 2 items per row */
+        max-width: calc(50% - 1rem);
     }
 
     .profile {
