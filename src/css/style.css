@@ -18,6 +18,7 @@ body {
     top: 0;
     left: 0;
     pointer-events: none;
+    z-index: -1;
 }
 
 .light {
@@ -32,9 +33,12 @@ body {
 }
 
 @keyframes twinkle {
-    0%, 100% {
+
+    0%,
+    100% {
         opacity: 0.2;
     }
+
     50% {
         opacity: 0.4;
     }
@@ -122,7 +126,8 @@ p {
     margin: 1rem;
     text-align: center;
     position: relative;
-    flex-basis: calc(33.33% - 2rem); /* 3 items per row */
+    flex-basis: calc(33.33% - 2rem);
+    /* 3 items per row */
     max-width: calc(33.33% - 2rem);
 }
 
@@ -219,7 +224,8 @@ p {
     }
 
     .gallery-item {
-        flex-basis: calc(50% - 1rem); /* 2 items per row */
+        flex-basis: calc(50% - 1rem);
+        /* 2 items per row */
         max-width: calc(50% - 1rem);
     }
 
@@ -253,12 +259,69 @@ p {
     }
 
     .gallery-item {
-        flex-basis: calc(50% - 1rem); /* 2 items per row */
+        flex-basis: calc(50% - 1rem);
+        /* 2 items per row */
         max-width: calc(50% - 1rem);
     }
 
     .profile {
         width: 100%;
         max-width: 100%;
+    }
+}
+
+
+/*------ Settings ------*/
+.container {
+    --color: #a5a5b0;
+    --size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    font-size: var(--size);
+    user-select: none;
+    fill: var(--color);
+}
+
+.container .play {
+    position: absolute;
+    animation: keyframes-fill .5s;
+}
+
+.container .pause {
+    position: absolute;
+    display: none;
+    animation: keyframes-fill .5s;
+}
+
+/* ------ On check event ------ */
+.container input:checked~.play {
+    display: none;
+}
+
+.container input:checked~.pause {
+    display: block;
+}
+
+/* ------ Hide the default checkbox ------ */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* ------ Animation ------ */
+@keyframes keyframes-fill {
+    0% {
+        transform: rotate(-180deg) scale(0);
+        opacity: 0;
+    }
+
+    50% {
+        transform: rotate(-10deg) scale(1.2);
     }
 }
