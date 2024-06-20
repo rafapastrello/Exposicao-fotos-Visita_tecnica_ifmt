@@ -6,7 +6,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #22003f;
+    background-color: #0e0033;
     color: white;
     overflow-x: hidden;
 }
@@ -105,7 +105,7 @@ p {
     flex-direction: column;
     align-items: center;
     padding: 2rem 0;
-    background-color: #22003f;
+    background-color: #0e0033;
     position: relative;
     height: auto;
 }
