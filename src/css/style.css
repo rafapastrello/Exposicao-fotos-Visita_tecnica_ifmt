@@ -112,7 +112,6 @@ p {
 
 .profile-container {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
 }
 
@@ -125,8 +124,8 @@ p {
     text-align: center;
     position: relative;
     flex-basis: calc(33.33% - 2rem);
-    /* 3 items per row */
     max-width: calc(33.33% - 2rem);
+    align-self: flex-start;
 }
 
 .profile img {
