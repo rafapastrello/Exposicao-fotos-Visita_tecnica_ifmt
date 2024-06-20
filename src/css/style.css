@@ -174,7 +174,7 @@ p {
 }
 
 .gallery-item:hover {
-    transform: scale(2);
+    transform: scale(1.1);
 }
 
 /* Media queries para tornar o site responsivo */
@@ -335,7 +335,7 @@ p {
     height: 100%;
     overflow: auto;
     background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.781);
     text-align: center; /* Centraliza conteúdo verticalmente */
 }
 
