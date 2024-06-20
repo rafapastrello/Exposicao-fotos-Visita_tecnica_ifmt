@@ -107,6 +107,7 @@ p {
     padding: 2rem 0;
     background-color: #0e0033;
     height: auto;
+    width: 100%;
 }
 
 .profile-container {
